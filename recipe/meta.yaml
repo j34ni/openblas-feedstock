@@ -22,7 +22,8 @@ build:
 
 requirements:
   build:
-    - {{ stdlib("c") }}
+#   - {{ stdlib("c") }}
+    - sysroot_linux-aarch64 >=2.17
     - {{ compiler("c") }}
     - {{ compiler("fortran") }}
     - perl
@@ -49,7 +50,8 @@ outputs:
         - {{ pin_subpackage("libopenblas" ~ name_suffix) }}
     requirements:
       build:
-        - {{ stdlib("c") }}
+#       - {{ stdlib("c") }}
+        - sysroot_linux-aarch64 >=2.17
         - {{ compiler("c") }}
         - {{ compiler("fortran") }}
         - llvm-openmp                   # [USE_OPENMP == 1]
